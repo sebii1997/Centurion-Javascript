@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+span{
+    letter-spacing: 1px;
+    background-color: rgb(45, 146, 234);
+    padding: 5 1rem;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+    margin-top: 5%;
+    color: red;
+}
