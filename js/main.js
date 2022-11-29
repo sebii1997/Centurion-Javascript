@@ -1,51 +1,134 @@
-
-let usuarioRegistrado = "Sebastian centurion";
-function ingreso(){
-    let ingresar = false;
-    for (let i = 0; i >= 0; i--){
-        let ingresoUsuario = prompt("Ingresa el usuario registrado por favor");
-        if(ingresoUsuario === usuarioRegistrado){
-            alert("Bienvenido Sebastian en que te podemos ayudar");
-            ingresar = true;
-            break;
-        }else{
-            alert("Bienvenido usuario")
-        }
-    }
-
-    return ingresar;
-}
-
-let exito = ingreso();
-
-if(exito){
-    let turno = "13.10.2022";
-    let opciones = prompt("Elegi las siguientes opciones: \n1 - Fecha prevista de turno. \n2 - Solicitar turno. \n3 - Cambiar fecha. \n4 - Para salir.");
-
-    while (opciones != 4) {
-        switch (opciones) {
-            case "1":
-                alert("Tu fecha prevista es " + turno);
-                break;
-            case "2":
-                let profesional = prompt("Selecciona el profesional: \n1 Odontologo \n2 Oftalmologo \n3 Pediatra");
-                if(profesional > 3){
-                    alert("No disponemos de fechas");
-                }else{
-                    alert("El profesional tiene fecha disponible");
-                }
-                break;
-            case "3":
-                let fecha = prompt("Seleccione la fecha disponible: \n 20.10.2022 \n 01.11.2022 \n 10.11.2022");
-                alert("Tu nueva fecha es " + fecha)
-
+const movies=[
+    {
+        id: 1,
+        name: "Thor: Amor y Trueno",
         
-            default:
-                alert("Opcion no valida");
-                break;
-        }
-        opciones = prompt("Elegi las siguientes opciones: \n1 - Fecha prevista de turno. \n2 - Solicitar turno. \n3 - Cambiar fecha. \n4 - Para salir.");
+        img:
+          "https://wallpaperaccess.com/full/3334411.jpg",
+        text:
+          "descripcion de thor",
+      },
+      {
+        id: 2,
+        name: "variedad",
+        
+        img:
+          "https://www.milenio.com/uploads/media/2022/04/27/peliculas-de-netflix-mas-vistas.jpg",
+        text:
+          "variedad",
+      },
+      {
+        id: 3,
+        name: "accion",
+        
+        img:
+          "https://es.rollingstone.com/wp-content/uploads/2022/02/25-peliculas-que-debes-ver-en-el-2022-portada.jpg",
+        text:
+          "pelis de accion",
+      },
+      {
+        id: 4,
+        name: "mortal Kombat",
+        
+        img:
+          "https://s3-eu-west-1.amazonaws.com/abandomedia/db/poster/db_posters_51579.jpg",
+        text:
+          "videojuegos",
+      }
+    ];
+  
+  const banner=document.getElementById("banner");
+  const bannerText=document.querySelector(".banner__text");
+  const bannerT=document.querySelector(".banner__title");
+  const bannerP=document.querySelector(".banner__paraph");
+  const left=document.getElementById("left");
+  const right=document.getElementById("rigth");
+  
+  for(let i=0;i<movies.length;i++){
+    let aux=movies[i];
+    let div=document.createElement("div");
+    
+    div.style.background=`url(${aux.img})`;
+    div.className="banner__container";
+    div.setAttribute("id",i);
+    
+    if(div.getAttribute("id")!=0){div.style.display="none";}else{div.style.display="flex";}
+    banner.appendChild(div);
+  
+  }
+  let indice=0;
+  
+  function mostrar(){
+      let i=movies[indice];
+      banner.style.background=`url(${i.img})`;
+      bannerT.textContent=i.name;
+   
+      bannerP.textContent=i.text;
+      
+      reset();
+  }
+  function reset(){
+    banner.style.display.width="100%";
+    banner.style.display.height="456px";
+      
+  }
+  left.addEventListener("click",(e)=>{
+      
+      const DivActual=document.getElementById(indice);
+      DivActual.style.display="none";
+      DivActual.style.opacity="0";
+     
+      indice--;
+  
+      if (indice<0){
+        indice=movies.length-1;
+        const Div=document.getElementById(indice);
+        Div.style.display="flex";
+        Div.style.opacity="1";
+     }else{
+      const Div=document.getElementById(indice);
+      Div.style.display="flex";
+      Div.style.opacity="1";}
+    mostrar();
+  });
+  
+  right.addEventListener("click",(e)=>{
+    
+    const DivActual=document.getElementById(indice);
+    DivActual.style.display="none";
+    DivActual.style.opacity="0";
+   
+    indice++;
+    
+    if (indice>movies.length-1){
+      indice=0;
+      const Div=document.getElementById(indice);
+      Div.style.display="flex";
+      Div.style.opacity="1";
+    }else{
+      const Div=document.getElementById(indice);
+      Div.style.display="flex";
+      Div.style.opacity="1";
     }
-}else{
-    alert("Por favor verifique el usuario ingresado para poder continuar, o comuniquese al numero 0800-222-clinica");
-}
+    mostrar();
+  });
+  
+  function slide(){
+    const DivActual=document.getElementById(indice);
+    DivActual.style.display="none";
+    DivActual.style.opacity="0";
+    
+    
+    if (indice>movies.length-1){
+      indice=0;
+      const Div=document.getElementById(indice);
+      Div.style.display="flex";
+      Div.style.opacity="1";
+    }else{
+      const Div=document.getElementById(indice);
+      Div.style.display="flex";
+      Div.style.opacity="1";
+    }
+    indice++;
+    mostrar();
+  }

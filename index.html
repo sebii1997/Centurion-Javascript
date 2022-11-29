@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/styles.css">
-    <title>Turnos Clinica</title>
+  <title>Peliculas</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="descripcion" content="Pagina de peliculas">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <h1><span>Bienvenidos al portal de turnos de la clinica</span></h1>
-    <hr>
-    <h2>Por favor siga las instrucciones de los cuadros que apareceran en pantalla</h2>
 
+  <nav class="nav__container">
+    <ul class="nav__links">
+      <li><a class="nav__link" href="#">Inicio</a></li>
+      <li><a class="nav__link" href="#">Peliculas</a></li>
+      <li><a class="nav__link" href="#">Series</a></li>
+      <li><a class="nav__link" href="#">Contacto</a></li>
+    </ul>
+  </nav>
 
+  <section id="banner"class="banner__container">
+    
+    <div class="flechas">
+      <img src="https://cdn.discordapp.com/attachments/998058620468076645/999146288333475861/unknown.png" id="left"class="arrow left">
+      <img src="https://cdn.discordapp.com/attachments/998058620468076645/999146288333475861/unknown.png" id="rigth"class="arrow rigth">  
+    </div>
+    
+    <div class="banner__text">
+        <h2 class="banner__title">Thor: Amor y Trueno</h2>
+        <p class="banner__paraph">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem aliquam natus illo est dolorum nostrum ipsa facere.
+        </p>
+    </div>
+    
+  </section>
+  
+  <div class="down__arrow">🍿</div>
+  <section class="landing__container">
+    <h2 class="landing__title">Peliculas destacadas</h2>
 
-    <script src="./js/main.js"></script>
-</body>
+    <div class="movies__container">
+      <img src="https://lumiere-a.akamaihd.net/v1/images/beta_epic_payoff_las_f8ee4a65.jpeg" alt="" class="movies__img">
+      <img src="https://images-3.wuaki.tv/system/artworks/83814/original/el-soldado-de-dios-1647604512-width317-quality60.jpeg" alt="" class="movies__img higher">
+      <img src="https://lumiere-a.akamaihd.net/v1/images/image_53a52f8d.jpeg?region=0,0,540,810&width=480" alt="" class="movies__img">
+      <img src="https://es.web.img3.acsta.net/c_310_420/pictures/22/04/25/10/39/2475018.jpg" alt="" class="movies__img higher">
+    </div>
+  </section>
+
+  <footer class="footer__container">
+    <div class="footer__social">
+      <span>Facebook</span>
+      <span>Twitter</span>
+      <span>Instagram</span>
+    </div>
+
+    <div class="footer__copyright">
+      <p>&copy; 2022</p>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+  </body>
 </html>
